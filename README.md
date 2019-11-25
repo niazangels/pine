@@ -1,5 +1,5 @@
 # Pine
-_A bare minimal Python Interpreter_
+_A bare minimal Python interpreter_
 
 <p align="center"> 
 <img src="images/logo.png">

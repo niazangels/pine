@@ -1,11 +1,12 @@
 
 # Created by https://www.gitignore.io/api/python,jupyternotebooks,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=python,jupyternotebooks,visualstudiocode
+# VS Code
+.vscode/
 
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
-
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 

@@ -30,14 +30,8 @@ class Interpreter:
 
         for (instruction, argument) in instructions:
             argument = self.parse_argument(code_object, instruction, argument)
-            if instruction == "LOAD_VALUE":
-                self.LOAD_VALUE(argument)
-            elif instruction == "STORE_NAME":
-                self.STORE_NAME(argument)
-            elif instruction == "LOAD_NAME":
-                self.LOAD_NAME(argument)
-            elif instruction == "ADD_TWO_VALUES":
-                self.ADD_TWO_VALUES()
-            elif instruction == "PRINT_ANSWER":
-                return self.PRINT_ANSWER()
-
+            method = getattr(self, instruction)
+            if argument is None:
+                method()
+            else:
+                method(argument)

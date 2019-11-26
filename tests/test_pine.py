@@ -5,7 +5,7 @@ pine_interpreter = Interpreter()
 
 
 class TestPineInterpreter:
-    def test_basic_addition(self):
+    def test_basic_addition(self, capsys):
         code_object = {
             "instructions": [
                 ("LOAD_VALUE", 0),  # the first number
@@ -15,9 +15,12 @@ class TestPineInterpreter:
             ],
             "numbers": [4, 2],
         }
-        assert pine_interpreter.execute(code_object) == 6
+        # assert pine_interpreter.execute(code_object) == 6
+        pine_interpreter.execute(code_object)
+        out, err = capsys.readouterr()
+        assert out == "6\n"
 
-    def test_variable(self):
+    def test_variable(self, capsys):
         """>>> def s():
         ...     a = 1
         ...     b = 2
@@ -38,4 +41,6 @@ class TestPineInterpreter:
             "names": ["a", "b"],
         }
 
-        assert pine_interpreter.execute(code_object) == 3
+        pine_interpreter.execute(code_object)
+        out, err = capsys.readouterr()
+        assert out == "3\n"

@@ -16,7 +16,7 @@ class Interpreter:
         self.LOAD_VALUE(self.stack.pop() + self.stack.pop())
 
     def PRINT_ANSWER(self):
-        return self.stack.pop()
+        print(self.stack.pop())
 
     def parse_argument(self, code_object, instruction, argument):
         if instruction in ["LOAD_VALUE"]:

@@ -32,6 +32,6 @@ class Interpreter:
             argument = self.parse_argument(code_object, instruction, argument)
             method = getattr(self, instruction)
             if argument is None:
-                method()
+                bytecode_method()
             else:
-                method(argument)
+                bytecode_method(argument)
